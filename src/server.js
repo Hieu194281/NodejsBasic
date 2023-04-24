@@ -1,8 +1,10 @@
 const express = require("express");
 import configViewEngine from "./config/viewEngine";
+require("dotenv").config();
+
 // import thư viện express
 const app = express(); // tạo app để chạy được
-const port = 8080; // tạo cổng
+const port = process.env.PORT || 8080; // tạo cổng
 
 configViewEngine(app);
 app.get("/", (req, res) => {
