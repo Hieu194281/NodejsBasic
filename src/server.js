@@ -1,9 +1,12 @@
-const express = require("express"); // import thư viện express
+const express = require("express");
+import configViewEngine from "./config/viewEngine";
+// import thư viện express
 const app = express(); // tạo app để chạy được
 const port = 8080; // tạo cổng
 
+configViewEngine(app);
 app.get("/", (req, res) => {
-  res.send("Hello World! vs Nguyen Trng Hiéu");
+  res.render("index.ejs");
 });
 app.get("/about", (req, res) => {
   res.send("I'm Hiếu ");
