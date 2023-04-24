@@ -1,6 +1,7 @@
 const express = require("express");
 import configViewEngine from "./config/viewEngine";
 import initWebRoute from "./route/web.js";
+
 require("dotenv").config();
 
 // import thư viện express
