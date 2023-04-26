@@ -19,7 +19,18 @@ let getDetailPage = async (req, res) => {
   return res.send(JSON.stringify(rows));
 };
 
+let createNewUser = async (req, res) => {
+  let { firstName, lastName, email, address } = req.body;
+  console.log("checckk req", req.body); // chinh laf cac truong name trong form
+  const [rows, fields] = await pool.execute(
+    `INSERT INTO users(firstName, lastName, email, address) VALUES (?, ?, ?, ?)`,
+    [firstName, lastName, email, address]
+  );
+  return res.redirect("/");
+};
+
 module.exports = {
   getHomePage,
   getDetailPage,
+  createNewUser,
 };

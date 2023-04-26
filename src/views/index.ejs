@@ -18,48 +18,79 @@
         <a href="about">About</a>
     </div>
 
-    <div class="w3-container">
-        <h2>List User</h2>
+    <div>
+        <div class="w3-container">
+            <h2>List User</h2>
 
-        <table class="w3-table-all w3-hoverable">
-            <thead>
-                <tr class="w3-light-grey">
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for(let i=0; i < dataUser.length; i++) { %>
-                    <tr>
-                        <td>
-                            <%= dataUser[i].id %>
-                        </td>
-                        <td>
-                            <%= dataUser[i].firstName %>
-                        </td>
-                        <td>
-                            <%= dataUser[i].lastName %>
-                        </td>
-                        <td>
-                            <%= dataUser[i].email %>
-                        </td>
-                        <td>
-                            <%= dataUser[i].address %>
-                        </td>
-                        <td>
-                            <button type="button"><a href="/detail/user/<%= dataUser[i].id%>"
-                                    target="_blank">Details</a></button>
-                            <button type="button">Edit</button>
-                            <button type="button">Delete</button>
-                        </td>
+            <table class="w3-table-all w3-hoverable">
+                <thead>
+                    <tr class="w3-light-grey">
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Actions</th>
                     </tr>
-                    <% } %>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <% for(let i=0; i < dataUser.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%= dataUser[i].id %>
+                            </td>
+                            <td>
+                                <%= dataUser[i].firstName %>
+                            </td>
+                            <td>
+                                <%= dataUser[i].lastName %>
+                            </td>
+                            <td>
+                                <%= dataUser[i].email %>
+                            </td>
+                            <td>
+                                <%= dataUser[i].address %>
+                            </td>
+                            <td>
+                                <button type="button"><a href="/detail/user/<%= dataUser[i].id%>"
+                                        target="_blank">Details</a></button>
+                                <button type="button">Edit</button>
+                                <button type="button">Delete</button>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="create-user-container">
+            <form action="/create-new-user" method="post">
+                <h1>
+                    Create a new User
+                </h1>
+                <div>
+                    <label>First Name</label>
+                    <input type="text" name="firstName">
+                </div>
+                <div>
+                    <label>Last Name</label>
+                    <input type="text" name="lastName">
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input type="email" name="email">
+                </div>
+                <div>
+                    <label>Address</label>
+                    <input type="text" name="address">
+                </div>
+                <div class="btn-form">
+                    <input style="cursor: pointer;" type="submit" value="Submit">
+                    <input type="reset">
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 

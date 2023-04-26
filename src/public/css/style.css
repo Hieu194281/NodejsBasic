@@ -1,6 +1,4 @@
 h1 {
-  color: red;
-  border: 1px solid green;
 }
 
 body {
@@ -30,4 +28,16 @@ body {
 .topnav a.active {
   background-color: #04aa6d;
   color: white;
+}
+.create-user-container {
+  padding: 15px;
+
+  text-align: center;
+}
+.create-user-container label {
+  display: block;
+}
+
+.btn-form {
+  margin-top: 15px;
 }

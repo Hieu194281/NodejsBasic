@@ -7,6 +7,8 @@ require("dotenv").config();
 // import thư viện express
 const app = express(); // tạo app để chạy được
 const port = process.env.PORT; // tạo cổng
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); // To parse the incoming requests with JSON payloads
 //set up view engine
 configViewEngine(app);
 
