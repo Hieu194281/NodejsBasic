@@ -7,7 +7,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 </head>
 
 <body>
@@ -51,11 +50,18 @@
                             <td>
                                 <%= dataUser[i].address %>
                             </td>
-                            <td>
-                                <button type="button"><a href="/detail/user/<%= dataUser[i].id%>"
-                                        target="_blank">Details</a></button>
-                                <button type="button">Edit</button>
-                                <button type="button">Delete</button>
+                            <td class="aaaaa">
+                                <div><button type="button"><a href="/detail/user/<%= dataUser[i].id%>"
+                                            target="_blank">Details</a></button></div>
+                                <div>
+                                    <form action="/edit-user/<%= dataUser[i].id%>" method="get"><button
+                                            type="submit">Edit</button></form>
+                                </div>
+                                <div>
+                                    <form action="/delete-user/<%= dataUser[i].id%>" method="post">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         <% } %>
