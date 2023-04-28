@@ -51,6 +51,15 @@ let updateUser = async (req, res) => {
   );
   return res.redirect("/");
 };
+
+let getUploadFilePage = async (req, res) => {
+  return res.render("Uploadfile.ejs");
+};
+
+let handleUploadFile = async (req, res) => {
+  res.send("hello da ta");
+};
+let handleUploadMultiFile = async (req, res) => {};
 module.exports = {
   getHomePage,
   getDetailPage,
@@ -58,4 +67,7 @@ module.exports = {
   DeleteUser,
   editUser,
   updateUser,
+  getUploadFilePage,
+  handleUploadFile,
+  handleUploadMultiFile,
 };

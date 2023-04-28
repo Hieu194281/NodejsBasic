@@ -42,3 +42,8 @@ body {
 td.aaaaa {
   display: flex !important;
 }
+
+.upload-file-container {
+  text-align: center;
+  margin-top: 50px;
+}

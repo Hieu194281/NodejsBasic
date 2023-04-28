@@ -15,6 +15,10 @@ const initWebRoute = (app) => {
   router.get("/edit-user/:userId", HomeController.editUser);
   router.post("/update-user", HomeController.updateUser);
 
+  router.get("/upload", HomeController.getUploadFilePage);
+  router.post("/upload-profile-pic", HomeController.handleUploadFile);
+  router.post("/upload-multiple-images", HomeController.handleUploadFile);
+
   return app.use("/", router);
 };
 
